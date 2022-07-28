@@ -3,10 +3,12 @@ import './destination.css';
 
 const Display = ({name,date,image}) => {
     return(
+        <div className="container">
         <div className="info">
-            <div>{<img urc={image} className="picture"/>}</div>
+            <img src={image} className="picture"/>
             <div className="address">{name}</div>
             <div className="date">{date}</div>
+        </div>
         </div>
     )
 }
