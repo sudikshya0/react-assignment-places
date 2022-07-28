@@ -1,5 +1,6 @@
 import React from 'react';
 import './destination.css';
+import Display from './Displayofname';
 
 const PersonList = () => {
     const details = [
@@ -46,22 +47,13 @@ const PersonList = () => {
             detail: "Bhaktapur, known locally as Khwopa, is a city in the east corner of the Kathmandu Valley in Nepal located about 13 kilometres from the capital city, Kathmandu. In terms of area, Bhaktapur is the smallest city of Nepal."
           }
     ]
-    // const nameList =  details.map(({id,name}) => (<h1 id={id}>{name}</h1>))
-    return(
-    <div className="container">
 
-    {details.map(({id,image,name,date}) => (
-    <div key={id} className="info"> 
-      <img src={image} className="picture"/>
-      <div className="address">{name}</div>
-      <div className="date">{date}</div>
-    </div>
     
-
-    ))}
+    return(
+      details.map((id) => {
+      return <Display id={id} image={id.image} name={id.name} date={id.date}/>
+      })
       
-    </div>    
-    // <div>{nameList}</div>
     )
-}
+    }
 export default PersonList
